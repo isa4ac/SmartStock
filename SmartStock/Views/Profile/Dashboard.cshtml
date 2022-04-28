@@ -49,7 +49,12 @@
 					</div>
 					<div class="message">
 						<div class="date">@Html.DisplayFor(modelItem => item.AlertDateTime)</div>
-						<div>@Html.DisplayFor(modelItem => item.Message)</div>
+						<div>
+							@Html.DisplayFor(modelItem => item.Message)
+							<div class="trash">
+								<button class="button-action-edit-delete" onclick="location.href='@Url.Action("DeleteCard", "Profile", new { Card_ID = item.Card_ID })';"><i class="fa-solid fa-trash"></i></button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -58,3 +63,4 @@
 	<form action="CreateCard">
 		<input type="submit" value="+ New Announcement" />
 	</form>
+</div>
